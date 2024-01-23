@@ -69,7 +69,7 @@ int main(){
                     fprintf(archivo, "%s\t", alumnos[i].direccion);
                     fprintf(archivo, "%s\t", alumnos[i].materia);
                     fprintf(archivo, "%d\t", alumnos[i].matricula);
-                    fprintf(archivo, "%2f\t", alumnos[i].nota);
+                    fprintf(archivo, "%f\t", alumnos[i].nota);
                 }
 
                 fclose(archivo); 
@@ -81,7 +81,18 @@ int main(){
             break;
         
     
-        
+        case 2:
+        for (int i = 0; i < estudiantes; i++)
+                {
+                    printf("\nEstudiante %d:\t", i + 1);
+                    printf("%s\t", alumnos[i].nombre);
+                    printf("%s\t", alumnos[i].direccion);
+                    printf("%s\t", alumnos[i].materia);
+                    printf("%d\t", alumnos[i].matricula);
+                    printf("%f\t\n", alumnos[i].nota);
+                }
+
+        }
 
     } while (opcion != 3);
     
