@@ -22,5 +22,16 @@ int main(){
     scanf("%d",&num);
 
 
+    do
+    {
+        printf("\nOpcion 1. Ingresar datos de un estudiante\n");
+        printf("Opcion 2. Mostrar alumnos \n");
+        printf("Opcion 3. Salir\n");
+        scanf("%d", &opcion);
+
+
+    } while (opcion != 3);
+    
+    
 }
 
