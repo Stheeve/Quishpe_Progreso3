@@ -29,6 +29,59 @@ int main(){
         printf("Opcion 3. Salir\n");
         scanf("%d", &opcion);
 
+        switch (opcion)
+        {
+        case 1:
+            for (int i = 0; i < num; i++)
+            {
+                 
+                printf("\nDatos del estudiante %d:\n", estudiantes + 1);
+
+                printf("Ingrese la matricula: ");
+                fflush(stdin);
+                scanf("%d", &alumnos[estudiantes].matricula);
+
+                printf("Ingrese el nombre: ");
+                fflush(stdin);
+                gets(alumnos[estudiantes].nombre);
+
+                printf("Ingrese la direccion: ");
+                fflush(stdin);
+                gets(alumnos[estudiantes].direccion);
+
+                printf("Ingrese la materia: ");
+                fflush(stdin);
+                gets(alumnos[estudiantes].materia);
+
+                printf("Ingrese la nota: ");
+                fflush(stdin);
+                scanf("%f", &alumnos[estudiantes].nota);
+                estudiantes++;
+
+                printf("Estudiante ingresado exitosamente.\n");
+
+
+                archivo = fopen("alumnos.txt", "w");
+                for (int i = 0; i < estudiantes; i++)
+                {
+                    fprintf(archivo, "\nEstudiante %d:\t", i + 1);
+                    fprintf(archivo, "%s\t", alumnos[i].nombre);
+                    fprintf(archivo, "%s\t", alumnos[i].direccion);
+                    fprintf(archivo, "%s\t", alumnos[i].materia);
+                    fprintf(archivo, "%d\t", alumnos[i].matricula);
+                    fprintf(archivo, "%2f\t", alumnos[i].nota);
+                }
+
+                fclose(archivo); 
+                printf("Datos guardados en el archivo 'alumnos.txt'.\n");
+
+                
+            }
+            
+            break;
+        
+    
+        
 
     } while (opcion != 3);
     
